@@ -1,0 +1,1 @@
+Welcome to my totally not OOP, cobbled together, ES5-ES6 mutated, unsemantic, using arrays to store data because im lazy to define proper objects, CSS-starved, "he need some milk" lookin code T_T. Its tic-tac-toe where the players alternate every round to ensure fair play. Some HAXXX ahead, viewer discretion is advised.

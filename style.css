@@ -1,0 +1,48 @@
+body {
+  text-align: center;
+}
+
+#wrapper {
+  padding: 0;
+}
+
+#title {
+  font-family: 'Karla', sans-serif;
+}
+
+#scoreboard, #gameStatus {
+  margin: 10px;
+}
+
+.row {
+  position: relative;
+  left: 32%;
+  display: flex;
+  align-items: center;
+  height: 10vw;
+  background-color: black;
+  width: 35%;
+  margin: 0;
+}
+
+.player1Win {
+  color: blue;
+}
+
+.player2Win {
+  color: red;
+}
+
+.column {
+  font-family: 'Karla', sans-serif;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:white;
+  width: 33.3%;
+  height: 96.5%;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+}
+
