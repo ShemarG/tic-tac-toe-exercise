@@ -3,14 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
+    <title>Tic-Tac-Toe: Redux Demo</title>
     <link href="TicTacToe.css" rel="stylesheet">
+    <link href="o.svg" rel="shortcut icon" type="image/x-icon"/>
   </head>
-  <body>
-    <div id="board"></div>
+  <body style="display: flex; justify-content: center;">
+    <div style="padding: 0; width: 30em;" id="board"></div>
     <script src="TicTacToe.js"></script>
-    <script src="script.js"></script>
+    <script>
+      const game = new TicTacToe(document.getElementById('board'))
+    </script>
   </body>
 </html>

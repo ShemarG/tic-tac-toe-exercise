@@ -2,6 +2,10 @@
   height: 3em;
 }
 
+.title-container {
+  font-size: 1.5em;
+}
+
 .hud-item {
   height: 50%;
   display: flex;
@@ -31,7 +35,7 @@
 .button-menu {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .replay-list {
@@ -43,8 +47,17 @@
   flex-grow: 10;
 }
 
+.replay-list::-webkit-scrollbar-button {
+  opacity: 0;
+}
+
 .replay-list-item {
     font-size: 0.8em;
+    text-align: center;
+}
+
+.replay-list-item:focus {
+  border: 1px solid black;
 }
 
 .menu-button {

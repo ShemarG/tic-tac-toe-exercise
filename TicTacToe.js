@@ -6,6 +6,7 @@ class TicTacToe {
     this.moves = [];
     this.round = 1;
     this.winner = null;
+    this.replayMode = false;
     this.moveCount = 0;
     this.currentPlayer = 'O';
     this.buildTitle();
@@ -147,8 +148,10 @@ class TicTacToe {
 
   buildTitle() {
     const titleContainer = document.createElement('span');
+    titleContainer.classList.add('title-container');
     const title = document.createElement('h1');
     title.style.margin = '0';
+    title.style.textAlign = 'center';
     title.textContent = 'TIC-TAC-TOE: Redux';
     titleContainer.appendChild(title);
     this.board.appendChild(titleContainer);
@@ -225,10 +228,28 @@ class TicTacToe {
 
   gameEnd() {
     this.sessionHistory[this.round] = { round: this.round, winner: this.winner, moves: this.moves };
+    const winEls = this.board.getElementsByClassName('win');
+    if (winEls.length !== 0) {
+      this.sessionHistory[this.round].winCoords = [];
+      for (let i = 0; i < 3; i++) {
+        this.sessionHistory[this.round].winCoords
+          .push([winEls[i].dataset.row, winEls[i].dataset.column]);
+      }
+    }
     const span = document.createElement('span');
+    span.tabIndex = 0;
+    span.dataset.round = this.round;
     span.classList.add('replay-list-item');
     span.textContent = `Round: ${this.round}, Winner: ${this.winner}`;
-    this.replayList.appendChild(span);
+    span.addEventListener('click', (e) => {
+      if (this.replayMode) {
+        e.target.focus();
+        this.clearBoard();
+        this.repopulateBoard(this.sessionHistory[e.currentTarget.dataset.round].moves,
+          this.sessionHistory[e.currentTarget.dataset.round].winCoords);
+      }
+    });
+    this.replayList.prepend(span);
     this.action.textContent = 'Next Round';
   }
 
@@ -260,10 +281,31 @@ class TicTacToe {
     this.replayButton.disabled = !(this.round > 1);
   }
 
+  repopulateBoard(moves, winPos) {
+    for (let i = 0; i < moves.length; i++) {
+      const img = document.createElement('img');
+      img.src = moves[i].player === 'O' ? 'o.svg' : 'x.png';
+      img.style.width = '80%';
+      this.elMatrix[moves[i].coords.row][moves[i].coords.column].appendChild(img);
+    }
+    if (winPos) {
+      this.elMatrix[winPos[0][0]][winPos[0][1]].classList.add('win');
+      this.elMatrix[winPos[1][0]][winPos[1][1]].classList.add('win');
+      this.elMatrix[winPos[2][0]][winPos[2][1]].classList.add('win');
+    }
+  }
+
   showPreviousRounds() {
-    this.action.disabled = true;
     if (this.replayButton.textContent === 'Show Previous Rounds') {
+      this.action.disabled = true;
       this.replayButton.textContent = 'Back to Game';
+      this.replayMode = true;
+    } else {
+      this.action.disabled = false;
+      this.replayButton.textContent = 'Show Previous Rounds';
+      this.replayMode = false;
+      this.clearBoard();
+      this.repopulateBoard(this.moves);
     }
   }
 
