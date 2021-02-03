@@ -6,38 +6,11 @@
     <title>repl.it</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
+    <link href="TicTacToe.css" rel="stylesheet">
   </head>
   <body>
-    <h1 id="title">TIC-TAC-TOE</h1>
-    <div id="gameStatus">
-      <span id="roundCounter"></span><br>
-      <span id="playerIndicator"></span><br>
-      <span id="winnerText"></span>
-    </div>
-    <div id="wrapper">
-      <div class="row" data-row-index="0">
-        <div class="column" data-col-index="0"></div>
-        <div class="column" data-col-index="1"></div>
-        <div class="column" data-col-index="2"></div>
-      </div>
-      <div class="row" data-row-index="1">      
-        <div class="column" data-col-index="0"></div>
-        <div class="column" data-col-index="1"></div>
-        <div class="column" data-col-index="2"></div>
-      </div>
-      <div class="row" data-row-index="2">      
-        <div class="column" data-col-index="0"></div>
-        <div class="column" data-col-index="1"></div>
-        <div class="column" data-col-index="2"></div>
-      </div>
-    </div>
-    <div id="scoreboard">
-      <span id="player1"></span><br>
-      <span id="player2"></span><br>
-      <span id="draws"></span><br>
-    </div>
-    <button id="resetButton">Restart Round</button>
-    <button id="nextButton">Next Round</button>
+    <div id="board"></div>
+    <script src="TicTacToe.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

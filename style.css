@@ -2,8 +2,10 @@ body {
   text-align: center;
 }
 
-#wrapper {
+#board {
   padding: 0;
+  width: 30em;
+  height: 60em;
 }
 
 #title {
@@ -45,4 +47,3 @@ body {
   margin-left: 0.5%;
   margin-right: 0.5%;
 }
-
