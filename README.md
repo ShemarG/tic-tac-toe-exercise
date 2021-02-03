@@ -10,4 +10,5 @@ It is designed to be a standalone module that can be imported (with its CSS file
 - **Win Highlighting**: Easily recognize when a win has ben achieved on the board as the winning move is highlighted in light green!
 - **Reset at will**: Want to throw out an ongoing game? Want to switch players? The reset button makes it all possible! It clears the board and starts the game anew.
 - **Score Keeping**: The scoreboard keeps track of wins for both players as well as draws.
-- **Time Machine**: Forgot how a particular game went? You can always go back to that game by clicking "Show Previous Games" and clicking the game you want from the list next to that button.
+- **Time Machine**: Forgot how a particular game went? You can always go back to that game by clicking "Show Previous Games" and clicking the game you want from the list next to that button. Current game progress is saved and reloaded when "Back to Game" is clicked.
+- **Customizable Styling**: Find the default styling to be drab? Restyle it in your own image! The markup is generated with well considered classes that makes restyling a breeze.
