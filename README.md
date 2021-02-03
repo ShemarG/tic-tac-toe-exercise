@@ -4,7 +4,7 @@
 Welcome to Tic-Tac-Toe: Redux! It was a project inspired by the [The Marcy Lab School's](https://www.marcylabschool.org/the-team) assignment to create a Tic-Tac-Toe game. I used this as a chance to further develop my OOP DOM manipulation skills without the aid of a framework.
 
 ### Overview
-It is designed to be a standalone module that can be imported (with its CSS file) to any HTML page, as `TicTacToe.js` handles all of the markup for the game, just so long as the class is initialized and a DOM element that is to be the game area is passed into its constructor.
+It is designed to be a standalone module that can be imported (with its CSS file) to any HTML page, as `TicTacToe.js` handles all of the markup for the game, just so long as an instance of the class is initialized and a DOM element that is to be the game area is passed into its constructor.
 
 ### Features
 - **Win Highlighting**: Easily recognize when a win has ben achieved on the board as the winning move is highlighted in light green!
